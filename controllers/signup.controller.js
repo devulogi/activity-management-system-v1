@@ -1,9 +1,9 @@
 const User = require('../models/user.model');
 const passport = require("passport");
-const { authenticateUser } = require('../helper');
+const {authenticateUser} = require('../helper');
 
 const getSignUpController = (req, res) => {
-    res.render('signup', { title: 'Sign Up' });
+    res.render('signup', {title: 'Sign Up'});
 }
 
 const postSignUpController = async (req, res, next) => {
@@ -11,14 +11,16 @@ const postSignUpController = async (req, res, next) => {
 
     // check if passwords match
     if (req.body.password !== req.body.password2) {
-        res.render('signup', { title: 'Sign Up', error: 'Passwords do not match' });
+        res.render('signup', {title: 'Sign Up', error: 'Passwords do not match'});
     }
 
     try {
         // check if user already exists
-        user = await User.findOne({ username: req.body.username });
+        user = await User.findOne({username: req.body.username});
         if (user) {
-            res.render('signup', { title: 'Sign Up', error: 'User already exists' });
+            req.flash('error', 'User already exists');
+            res.redirect('/signup');
+            res.render('signup', {title: 'Sign Up'});
         } else {
             user = new User(req.body); // create new user object
             await user.save(); // save user to database
