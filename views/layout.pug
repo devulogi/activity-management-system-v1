@@ -10,5 +10,12 @@ html(lang="en")
             p Welcome to #{title}, #{user.username}!
         else
             p Welcome to #{title}, Guest!
+        if infos && infos.length > 0
+            each info in infos
+                p= info
+        if errors && errors.length > 0
+            each error in errors
+                p= error
         include header
+
         block content
