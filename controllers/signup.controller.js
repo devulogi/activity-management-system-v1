@@ -27,7 +27,7 @@ const postSignUpController = async (req, res, next) => {
             authenticateUser(req, res, next);
         }
     } catch (error) {
-        res.status(400).send(error);
+        return next(error);
     }
 }
 
