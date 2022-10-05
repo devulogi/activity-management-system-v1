@@ -1,4 +1,5 @@
 const passport = require("passport");
+
 const authenticateUser = (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) {
@@ -17,4 +18,25 @@ const authenticateUser = (req, res, next) => {
     })(req, res);
 }
 
-exports.authenticateUser = authenticateUser;
+const ensureAuthenticated = (req, res, next) => {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    req.flash('error', 'You must be logged in to view this page');
+    res.redirect('/login');
+}
+
+const logOut = async (req, res, next) => {
+    req.logout(function (err) {
+        if (err) {
+            return next(err);
+        }
+        res.redirect('/');
+    });
+};
+
+module.exports = {
+    authenticateUser,
+    ensureAuthenticated,
+    logOut
+}
