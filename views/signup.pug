@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    form(action='/signup' method='post')
+        .form-group
+            label(for='username') Username
+            input#username.form-control(type='text' name='username' placeholder='Username')
+        .form-group
+            label(for='password') Password
+            input#password.form-control(type='password' name='password' placeholder='Password')
+        .form-group
+            label(for='password2') Confirm Password
+            input#password2.form-control(type='password' name='password2' placeholder='Confirm Password')
+        button.btn.btn-primary(type='submit') Sign Up

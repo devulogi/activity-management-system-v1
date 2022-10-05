@@ -1,0 +1,7 @@
+nav
+    a(href="/") Home
+    a(href="/signup") Sign Up
+    if !user
+        a(href="/login") Login
+    else
+        a(href="/logout") Logout
