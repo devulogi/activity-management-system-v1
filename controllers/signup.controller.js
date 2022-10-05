@@ -1,5 +1,4 @@
 const User = require('../models/user.model');
-const passport = require("passport");
 const {authenticateUser} = require('../helper');
 
 const getSignUpController = (req, res) => {
