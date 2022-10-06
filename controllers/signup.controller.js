@@ -1,5 +1,8 @@
 const User = require("../models/user.model");
 const { authenticateUser } = require("../helper");
+const { APP_ROUTES, FLASH_MESSAGE_TYPES } = require("../constants");
+const { SUCCESS, ERROR } = FLASH_MESSAGE_TYPES;
+const { SIGN_UP } = APP_ROUTES;
 
 const getSignUpController = (req, res) => {
   res.render("signup", { title: "Sign Up" });
@@ -17,12 +20,12 @@ const postSignUpController = async (req, res, next) => {
     // check if user already exists
     user = await User.findOne({ username: req.body.username });
     if (user) {
-      req.flash("error", "User already exists.");
-      res.redirect("/signup");
+      req.flash(ERROR, "User already exists.");
+      res.redirect(SIGN_UP);
     } else {
       user = new User(req.body); // create new user object
       await user.save(); // save user to database
-      req.flash("success", "You have successfully signed up.");
+      req.flash(SUCCESS, "You have successfully signed up.");
       // authenticate user and redirect to home page
       authenticateUser(true)(req, res, next);
     }
