@@ -9,7 +9,6 @@ const {
   logOut,
 } = require("../helper"); // helper functions
 
-
 // every view will now have access to the user object (if logged in)
 routes.use((req, res, next) => {
   res.locals.user = req.user; // user object
