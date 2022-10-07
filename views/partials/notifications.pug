@@ -3,10 +3,25 @@
 // @param {Array} successes - array of success messages
 if successes && successes.length > 0
     each message in successes
-        p= message
+        .toast.fade.show(role='alert' aria-live='assertive' aria-atomic='true' data-bs-delay='5000')
+            .toast-header
+                strong.text-success.text-uppercase.text-truncate.me-auto Success
+                button.btn-close(data-bs-dismiss='toast' aria-label='Close')
+            .toast-body
+                p.text-success.text-truncate= message
 if infos && infos.length > 0
     each message in infos
-        p= message
+        .toast.fade.show(role='alert' aria-live='assertive' aria-atomic='true' data-bs-delay='5000')
+            .toast-header
+                strong.text-primary.text-uppercase.text-truncate.me-auto Info
+                button.btn-close(data-bs-dismiss='toast' aria-label='Close')
+            .toast-body
+                p.text-primary.text-truncate= message
 if errors && errors.length > 0
     each message in errors
-        p= message
+        .toast.fade.show(role='alert' aria-live='assertive' aria-atomic='true' data-bs-delay='5000')
+            .toast-header
+                strong.text-danger.text-uppercase.text-truncate.me-auto Error
+                button.btn-close(data-bs-dismiss='toast' aria-label='Close')
+            .toast-body
+                p.text-danger.text-truncate= message

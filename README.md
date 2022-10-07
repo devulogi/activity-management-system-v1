@@ -1,11 +1,18 @@
 # Activity Management System v1.0
 
+Author: *[Obet Palmares](https://github.com/devulogi)*
+
 ---
 
 ### INTRODUCTION
 
-This is a simple activity management system. It is a web application that allows users to create, edit, and delete
-activities. It also allows users to register for activities and view their registration status, etc.
+
+This is a simple activity management system that let users create, edit, and delete activities and
+activity types, manage activity timeslots, users, and generate reports based on the activity. Additionally, users are
+able to register for activities and view the status of their registration.
+
+This web application is built using the [Express](https://expressjs.com/) framework for Node.js and
+the [MongoDB](https://www.mongodb.com/) database.
 
 ### COMMIT GUIDELINES
 
@@ -27,9 +34,9 @@ Example:
 git commit -m "feat: add new feature"
 ```
 
-### TASK LIST: 🔧
+### TASK LIST:
 
-#### 1. User Management
+#### 1. USER MANAGEMENT
 
 - [x] User registration with roles (admin, user, participant)
 - [x] Login & Logout
@@ -45,7 +52,7 @@ git commit -m "feat: add new feature"
 - [ ] Promote a user to admin
 - [ ] Demote an admin to user
 
-#### 2. Activity Management
+#### 2. ACTIVITY MANAGEMENT
 
 - [ ] Create a new activity
 - [ ] Edit an existing activity
@@ -66,14 +73,15 @@ git commit -m "feat: add new feature"
 - [ ] View all activities types (e.g. sports, games, etc.)
 - [ ] View all activities that are of a certain type (e.g. sports, games, etc.)
 
-#### 3. Manage Activity Types
+
+#### 3. MANAGE ACTIVITY TYPES
 
 - [ ] Create a new activity type
 - [ ] Edit an existing activity type
 - [ ] Delete an existing activity type
 - [ ] View all activity types
 
-#### 3. Manage Activity Attendance
+#### 3. MANAGE ACTIVITY ATTENDANCE
 
 - [ ] View all participants of an activity
 - [ ] View all participants of an activity that are not banned
