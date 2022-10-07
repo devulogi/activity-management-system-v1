@@ -2,7 +2,7 @@ const passport = require("passport");
 const { APP_ROUTES, FLASH_MESSAGE_TYPES, ROLES } = require("./constants");
 const { HOME, LOGIN } = APP_ROUTES;
 const { SUCCESS, INFO, ERROR } = FLASH_MESSAGE_TYPES;
-const { ADMIN } = ROLES;
+const { ADMIN, PARTICIPANT, USER } = ROLES;
 
 /**
  * Authenticate user and redirect to home page if user is authenticated or redirect to login page if user is not authenticated
@@ -42,7 +42,6 @@ const authenticateUser = (isNewUser = false) => {
   };
 };
 
-// TODO: check roles of access and manage route modules
 /**
  * Check if user is authorized to access the route
  * @param {Object} req
@@ -50,13 +49,21 @@ const authenticateUser = (isNewUser = false) => {
  * @param {Function} next
  * @return {Function | void}
  */
-const authorizedRoutesBasedOneRole = (req, res, next) => {
-  if (req.user.role === ADMIN) {
-    if (["/profile", "/activity", "/users"].includes(req.path.url)) {
-      return next();
-    }
+const authorizedRoutesBasedOnRole = (req, res, next) => {
+  switch (req.user._doc.role) {
+    case ADMIN:
+      [HOME].includes(req.path) ? next() : res.redirect(HOME);
+      break;
+    case USER:
+      [HOME].includes(req.path) ? next() : res.redirect(HOME);
+      break;
+    case PARTICIPANT:
+      [HOME].includes(req.path) ? next() : res.redirect(HOME);
+      break;
+    default:
+      req.flash(ERROR, "You are not authorized to view this page.");
+      return res.redirect(HOME);
   }
-  next();
 };
 
 /**
@@ -70,7 +77,7 @@ const ensureAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
   }
-  req.flash(ERROR, "You must be logged in to view this page");
+  req.flash(ERROR, "You must be logged in to view this page.");
   res.redirect(LOGIN);
 };
 
@@ -94,5 +101,5 @@ module.exports = {
   authenticateUser,
   ensureAuthenticated,
   logOut,
-  authorizedRoutesBasedOneRole,
+  authorizedRoutesBasedOnRole,
 };
