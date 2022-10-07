@@ -11,6 +11,12 @@ const getSignUpController = (req, res) => {
 const postSignUpController = async (req, res, next) => {
   let user; // user object
 
+  // check if username & password is empty. if empty, return error message.
+  if (req.body.username === "" || req.body.password === "") {
+    req.flash(ERROR, "Username or password is empty.");
+    return res.redirect(SIGN_UP);
+  }
+
   // check if passwords match
   if (req.body.password !== req.body.password2) {
     res.render("signup", { title: "Sign Up", error: "Passwords do not match" });
