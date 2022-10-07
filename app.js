@@ -24,7 +24,7 @@ app.use(morgan("dev")); // log every request to the console
 app.use(express.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
 app.use(
   session({
-    secret: "keyboard cat", // used to sign the session ID cookie
+    secret: "a2V5Ym9hcmQgY2F0", // used to sign the session ID cookie
     resave: false, // don't save session if unmodified
     saveUninitialized: true, // don't create session until something stored
     cookie: {
