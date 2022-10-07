@@ -42,6 +42,7 @@ const authenticateUser = (isNewUser = false) => {
   };
 };
 
+// TODO: check roles of access and manage route modules
 /**
  * Check if user is authorized to access the route
  * @param {Object} req
@@ -64,6 +65,7 @@ const authorizedRoutesBasedOnRole = (req, res, next) => {
       req.flash(ERROR, "You are not authorized to view this page.");
       return res.redirect(HOME);
   }
+  next();
 };
 
 /**
