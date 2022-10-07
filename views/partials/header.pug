@@ -1,0 +1,7 @@
+nav.nav
+    a.nav-link(href="/") Home
+    a.nav-link(href="/signup") Sign Up
+    if !user
+        a.nav-link(href="/login") Login
+    else
+        a.nav-link(href="/logout") Logout
