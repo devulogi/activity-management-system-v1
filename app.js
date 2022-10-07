@@ -5,7 +5,7 @@ const session = require("express-session");
 const MemoryStore = require("memorystore")(session);
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const mongoose = require("mongoose");
+const { connect: db, connection } = require("mongoose").default;
 const flash = require("connect-flash");
 
 const app = express();
@@ -96,17 +96,16 @@ app.use(routes);
 app.listen(3000, () => {
   console.log("Server started on port 3000");
   // Connect to database
-  mongoose.connect("mongodb://localhost:27017/express-auth", {
+  db("mongodb://localhost:27017/express-auth", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    connectTimeoutMS: 1000,
   });
-  const db = mongoose.connection;
-  db.on("error", function () {
+  connection.on("error", function () {
     console.error("connection error:");
-    // exit gracefully
-    process.exit(1);
+    process.exit(1); // exit gracefully on error
   });
-  db.once("open", function () {
+  connection.once("open", function () {
     // we're connected!
     console.log("Connected to database");
   });
