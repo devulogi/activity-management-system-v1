@@ -6,8 +6,6 @@ Author: *[Obet Palmares](https://github.com/devulogi)*
 
 ### INTRODUCTION
 
-This is a simple activity management system. It is a web application that allows users to create, edit, and delete
-activities. It also allows users to register for activities and view their registration status, etc.
 This is a simple activity management system that let users create, edit, and delete activities and
 activity types, manage activity timeslots, users, and generate reports based on the activity. Additionally, users are
 able to register for activities and view the status of their registration.

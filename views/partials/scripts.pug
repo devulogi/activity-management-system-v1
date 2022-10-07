@@ -1,2 +1,20 @@
 script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js', integrity='sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p', crossorigin='anonymous')
-script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js', integrity='sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF', crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM', crossorigin='anonymous')
+script.
+    // close toast notifications after 3 seconds (3000 milliseconds)
+    let toastElList = [].slice.call(document.querySelectorAll('.toast')) // convert NodeList to Array
+    let toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl) // create a new Toast object for each toast element
+    });
+    toastList.forEach(toast => toast.show()); // show all toast notifications
+    toastList.forEach(toast => toast.show())
+    setTimeout(function () {
+        toastList.forEach(toast => toast.hide()); // hide all toast notifications after 3 seconds
+    }, 3000)
+    let toastButtonList = [].slice.call(document.querySelectorAll('.btn-close')) // convert NodeList to Array
+    toastButtonList.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            toastList.forEach(toast => toast.hide()); // close all toast notifications when the close button is clicked
+        })
+    })
+
