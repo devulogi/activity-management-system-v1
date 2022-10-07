@@ -2,12 +2,13 @@ extends layout
 
 block content
     form(action="/login" method="post")
-        div.form-group
-            label(for="username") Username
-            input#username.form-control(type="text" name="username" placeholder="Username")
-        div.form-group
-            label(for="password") Password
-            input#password.form-control(type="password" name="password" placeholder="Password")
-        div.form-group
+        .form-group.mb-3
+            label.form-label(for="username") Username
+            input#username.form-control(type="text" name="username" placeholder="Username" aria-required="true" required)
+        .form-group.mb-3
+            label.form-label(for="password") Password
+            input#password.form-control(type="password" name="password" placeholder="Password" aria-required="true" required)
+        .form-group.mb-3
             button.btn.btn-primary(type="submit") Login
-        p Don't have an account? <a href="/signup">Sign Up</a>
+        p Don't have an account?
+            a.ps-1(href="/signup") Sign Up
