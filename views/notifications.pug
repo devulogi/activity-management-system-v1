@@ -1,7 +1,8 @@
 // show flash message if it exists in the session object
 // example: req.flash('success', 'You are now registered and can log in')
-if successess && successess.length > 0
-    each message in successess
+// @param {Array} successes - array of success messages
+if successes && successes.length > 0
+    each message in successes
         p= message
 if infos && infos.length > 0
     each message in infos
