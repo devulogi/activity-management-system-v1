@@ -6,7 +6,6 @@ Author: *[Obet Palmares](https://github.com/devulogi)*
 
 ### INTRODUCTION
 
-
 This is a simple activity management system that let users create, edit, and delete activities and
 activity types, manage activity timeslots, users, and generate reports based on the activity. Additionally, users are
 able to register for activities and view the status of their registration.
@@ -72,7 +71,6 @@ git commit -m "feat: add new feature"
 - [ ] View all activities that are ongoing and not full
 - [ ] View all activities types (e.g. sports, games, etc.)
 - [ ] View all activities that are of a certain type (e.g. sports, games, etc.)
-
 
 #### 3. MANAGE ACTIVITY TYPES
 
