@@ -73,7 +73,6 @@ git commit -m "feat: add new feature"
 - [ ] View all activities types (e.g. sports, games, etc.)
 - [ ] View all activities that are of a certain type (e.g. sports, games, etc.)
 
-
 #### 3. MANAGE ACTIVITY TYPES
 
 - [ ] Create a new activity type
