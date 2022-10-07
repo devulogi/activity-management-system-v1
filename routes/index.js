@@ -5,7 +5,7 @@ const { SUCCESS, INFO, ERROR } = FLASH_MESSAGE_TYPES;
 
 const {
   ensureAuthenticated,
-  authorizedRoutesBasedOneRole,
+  authorizedRoutesBasedOnRole,
   logOut,
 } = require("../helper"); // helper functions
 
@@ -20,7 +20,7 @@ routes.use((req, res, next) => {
 
 routes.get(
   HOME,
-  [ensureAuthenticated, authorizedRoutesBasedOneRole],
+  [ensureAuthenticated, authorizedRoutesBasedOnRole],
   require("./home.route")
 ); // GET / - Home page
 routes.use(SIGN_UP, require("./signup.route"));
