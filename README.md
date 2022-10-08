@@ -13,26 +13,6 @@ able to register for activities and view the status of their registration.
 This web application is built using the [Express](https://expressjs.com/) framework for Node.js and
 the [MongoDB](https://www.mongodb.com/) database.
 
-### COMMIT GUIDELINES
-
-> Commit message lines will be cropped at 100 characters.
-
-- **feat**: *A new feature.*
-- **fix**: *A bug fix.*
-- **docs**: *Documentation only changes.*
-- **style**: *Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).*
-- **refactor**: *A code change that neither fixes a bug nor adds a feature.*
-- **perf**: *A code change that improves performance.*
-- **test**: *Adding missing tests.*
-- **chore**: *Changes to the build process or auxiliary tools and libraries such as documentation generation.*
-- **revert**: *Reverts a previous commit.*
-
-Example:
-
-```bash
-git commit -m "feat: add new feature"
-```
-
 ### FUNCTIONALITIES:
 
 #### 1. USER MANAGEMENT
@@ -74,3 +54,23 @@ git commit -m "feat: add new feature"
 - [ ] View all participants of an activity that are banned
 - [ ] Ban a participant of an activity
 - [ ] Unban a participant of an activity
+
+### COMMIT GUIDELINES
+
+> Commit message lines will be cropped at 100 characters.
+
+- **feat**: *A new feature.*
+- **fix**: *A bug fix.*
+- **docs**: *Documentation only changes.*
+- **style**: *Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).*
+- **refactor**: *A code change that neither fixes a bug nor adds a feature.*
+- **perf**: *A code change that improves performance.*
+- **test**: *Adding missing tests.*
+- **chore**: *Changes to the build process or auxiliary tools and libraries such as documentation generation.*
+- **revert**: *Reverts a previous commit.*
+
+Example:
+
+```bash
+git commit -m "feat: add new feature"
+```
