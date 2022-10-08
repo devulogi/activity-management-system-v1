@@ -7,12 +7,22 @@ html(lang="en")
         link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC', crossorigin='anonymous')
         title= title
     body
+        // imports mixins (e.g. navbar.mixin.pug) from the mixins folder
+        // (see pug documentation for more info at https://pugjs.org/language/mixins.html))
+        include mixins/navbar.mixin.pug
+        // imports  standard website components (e.g. header, notifications, etc.)
+        // from the partials folder (see pug documentation for more info at https://pugjs.org/language/includes.html)
         include partials/header
         include partials/notifications
         // if user is logged in, show username else show Guest in the navbar
+        // (see pug documentation for more info at https://pugjs.org/language/interpolation.html)
+        // (see pug documentation for more info at https://pugjs.org/language/conditionals.html)
         if user
             p You are logged in as, #{user.username}!
         else
             p You are logged in as, Guest!
+        // in a template , a block is a placeholder for content that will be inserted in a specific location
+        // (see pug documentation for more info on blocks at https://pugjs.org/language/inheritance.html)
         block content
+        // from the partials folder (see pug documentation for more info at https://pugjs.org/language/includes.html)
         include partials/scripts
