@@ -7,7 +7,6 @@ script.
         return new bootstrap.Toast(toastEl) // create a new Toast object for each toast element
     });
     toastList.forEach(toast => toast.show()); // show all toast notifications
-    toastList.forEach(toast => toast.show())
     setTimeout(function () {
         toastList.forEach(toast => toast.hide()); // hide all toast notifications after 3 seconds
     }, 3000)
