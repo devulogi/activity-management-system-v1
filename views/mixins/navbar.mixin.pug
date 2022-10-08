@@ -1,3 +1,7 @@
+// navbar is compiled on runtime based on the arguments passed to this mixin
+// @param {Object} user - user object from current session
+// @param {string} path - current path from request object
+// @return {HTML} - navbar markup
 mixin navbar(user, path)
     nav.navbar.navbar-expand-lg.navbar-light.bg-light
         .container-fluid
