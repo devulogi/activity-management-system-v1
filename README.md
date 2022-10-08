@@ -15,10 +15,13 @@ the [MongoDB](https://www.mongodb.com/) database.
 
 ### FUNCTIONALITIES:
 
-#### 1. USER MANAGEMENT
+AUTHENTICATION AND AUTHORIZATION
 
 - [x] User registration with roles (admin, user, participant)
 - [x] Login & Logout
+
+#### 1. USER MANAGEMENT
+
 - [ ] View all users
 - [ ] View all admins
 - [ ] View all non-admins
