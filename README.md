@@ -59,18 +59,6 @@ git commit -m "feat: add new feature"
 - [ ] Register for an activity
 - [ ] View registration status
 - [ ] View all activities
-- [ ] View all registered activities
-- [ ] View all unregistered activities
-- [ ] View all activities that are full
-- [ ] View all activities that are not full
-- [ ] View all activities that are ongoing
-- [ ] View all activities that are not ongoing
-- [ ] View all activities that are upcoming
-- [ ] View all activities that are not upcoming
-- [ ] View all activities that are ongoing and full
-- [ ] View all activities that are ongoing and not full
-- [ ] View all activities types (e.g. sports, games, etc.)
-- [ ] View all activities that are of a certain type (e.g. sports, games, etc.)
 
 #### 3. MANAGE ACTIVITY TYPES
 
