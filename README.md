@@ -33,7 +33,7 @@ Example:
 git commit -m "feat: add new feature"
 ```
 
-### TASK LIST:
+### FUNCTIONALITIES:
 
 #### 1. USER MANAGEMENT
 
