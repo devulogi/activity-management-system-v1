@@ -5,7 +5,7 @@ const { SUCCESS, ERROR } = FLASH_MESSAGE_TYPES;
 const { SIGN_UP } = APP_ROUTES;
 
 const getSignUpController = (req, res) => {
-  res.render("signup", { title: "Sign Up" });
+  res.render("signup", { title: "Sign Up", path: SIGN_UP });
 };
 
 const postSignUpController = async (req, res, next) => {

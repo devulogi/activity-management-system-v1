@@ -23,8 +23,8 @@ routes.get(
   [ensureAuthenticated, authorizedRoutesBasedOnRole],
   require("./home.route")
 ); // GET / - Home page
-routes.use(SIGN_UP, require("./signup.route"));
-routes.use(LOGIN, require("./login.route"));
-routes.get(LOGOUT, logOut);
+routes.use(SIGN_UP, require("./signup.route")); // GET /signup - Sign up page
+routes.use(LOGIN, require("./login.route")); // GET /login - Login page
+routes.get(LOGOUT, logOut); // GET /logout - Logout page
 
 module.exports = routes;

@@ -1,6 +1,7 @@
 const { authenticateUser } = require("../helper");
+const { LOGIN } = require("../constants").APP_ROUTES;
 const getLoginController = (req, res) => {
-  res.render("login", { title: "Login" });
+  res.render("login", { title: "Login", path: LOGIN });
 };
 
 const postLoginController = (req, res, next) => {
