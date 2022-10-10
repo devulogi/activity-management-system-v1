@@ -19,8 +19,8 @@ AUTHENTICATION AND AUTHORIZATION
 
 - [x] User registration with roles (admin, user, participant)
 - [x] Login & Logout
+- [x] Email verification
 - [ ] Password reset
-- [ ] Email verification
 
 #### 1. USER MANAGEMENT
 
