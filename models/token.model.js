@@ -11,7 +11,7 @@ const TokenSchema = new Schema({
   expireAt: {
     type: Date,
     default: Date.now,
-    index: { expires: 86400000 }, // expires in 24 hours
+    expires: 43200, // 12 hours
   },
 });
 
