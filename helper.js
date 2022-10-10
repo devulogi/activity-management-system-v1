@@ -8,12 +8,13 @@ const { HOME, LOGIN } = APP_ROUTES;
 const { SUCCESS, INFO, ERROR } = FLASH_MESSAGE_TYPES;
 const { ADMIN, PARTICIPANT, USER } = ROLES;
 
-const oAuth2Client = new google.auth.OAuth2(
+const oAuth2Client = new google.auth.OAuth2( // create a new OAuth2 client using the client ID, client secret
   process.env.GOOGLE_CLIENT_ID,
   process.env.GOOGLE_CLIENT_SECRET,
   process.env.GOOGLE_REDIRECT_URL
 );
 oAuth2Client.setCredentials({
+  // set the credentials using the refresh token from the OAuth2 client
   refresh_token: process.env.GOOGLE_REFRESH_TOKEN,
 });
 
