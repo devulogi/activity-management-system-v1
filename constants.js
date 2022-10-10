@@ -3,6 +3,7 @@ const APP_ROUTES = {
   SIGN_UP: "/signup",
   LOGIN: "/login",
   LOGOUT: "/logout",
+  VERIFY_EMAIL: "/confirmation/:token",
 };
 
 const FLASH_MESSAGE_TYPES = {

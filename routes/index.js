@@ -1,6 +1,6 @@
 const routes = require("express").Router();
 const { APP_ROUTES, FLASH_MESSAGE_TYPES } = require("../constants");
-const { HOME, SIGN_UP, LOGIN, LOGOUT } = APP_ROUTES;
+const { HOME, SIGN_UP, LOGIN, LOGOUT, VERIFY_EMAIL } = APP_ROUTES;
 const { SUCCESS, INFO, ERROR } = FLASH_MESSAGE_TYPES;
 
 const {
@@ -26,5 +26,9 @@ routes.get(
 routes.use(SIGN_UP, require("./signup.route")); // GET /signup - Sign up page
 routes.use(LOGIN, require("./login.route")); // GET /login - Login page
 routes.get(LOGOUT, logOut); // GET /logout - Logout page
+routes.get(
+  VERIFY_EMAIL,
+  require("../controllers/email.confirmation.controller")
+); // GET /confirmation/:token - Confirmation page
 
 module.exports = routes;
