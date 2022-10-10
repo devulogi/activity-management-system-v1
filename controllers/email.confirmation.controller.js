@@ -4,7 +4,6 @@ const { APP_ROUTES, FLASH_MESSAGE_TYPES } = require("../constants");
 const { LOGIN } = APP_ROUTES;
 const { SUCCESS, INFO, ERROR } = FLASH_MESSAGE_TYPES;
 
-// require("./confirmation.route") - // GET /confirmation/:token - Confirmation page
 /**
  * @param {Object} req - request object from client
  * @param {Object} res - response object from server
