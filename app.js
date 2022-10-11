@@ -4,13 +4,14 @@ const path = require("path");
 const session = require("express-session");
 const MemoryStore = require("memorystore")(session);
 const passport = require("passport");
-const { connect: db, connection } = require("mongoose").default;
+
 const flash = require("connect-flash");
 require("dotenv").config();
 
 const app = express();
 const routes = require("./routes");
 const passportService = require("./services/passport.service");
+const dbConnect = require("./services/mongoose");
 
 // set up pug for templating
 app.set("view engine", "pug");
@@ -54,18 +55,6 @@ app.use(routes);
 // Start server
 app.listen(process.env.EXPRESS_APP_PORT, () => {
   console.log("Server started on port 3000");
-  // Connect to database
-  db(`${process.env.MONGODB_URI}/${process.env.MONGODB_DB}`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    connectTimeoutMS: 1000,
-  });
-  connection.on("error", function () {
-    console.error("connection error:");
-    process.exit(1); // exit gracefully on error
-  });
-  connection.once("open", function () {
-    // we're connected!
-    console.log("Connected to database");
-  });
+  // connect to database
+  dbConnect();
 });
